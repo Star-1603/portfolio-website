@@ -66,7 +66,7 @@ useEffect(() => {
   transition={{ duration: 0.5 }}
 >
   <h1 className="text-2xl font-bold text-pink-800 flex items-center">
-    {"✨ Syeda Umaiza Unsa"} <FaHeart className="ml-2 text-red-500" /> ✨
+    ✨ Syeda Umaiza Unsa <FaHeart className="ml-2 text-red-500" /> ✨
   </h1>
   <ul className="hidden md:flex space-x-6 text-pink-800">
     {["About", "Projects", "Gallery", "Contact"].map((item, index) => (
@@ -93,7 +93,7 @@ useEffect(() => {
       }}
     >
       <h2 className="text-4xl font-extrabold text-purple-900 flex justify-center items-center gap-2">
-        {"💖 About Me"} <FaStar className="text-yellow-400 animate-pulse" />
+        💖 About Me <FaStar className="text-yellow-400 animate-pulse" />
       </h2>
       
       <motion.div
@@ -122,8 +122,8 @@ useEffect(() => {
         </div>
         
         <p className="max-w-lg text-purple-950 mt-8 md:mt-0 md:ml-8 text-lg leading-relaxed font-medium bg-white bg-opacity-80 p-4 rounded-lg shadow-md">
-          {"Hi, I'm"} <span className="text-purple-700 font-bold">{"Umaiza!"}</span> {"✨ A passionate"} <FaMagic className="inline text-pink-500" /> {"ML and Generative AI enthusiast"} <FaRobot className="inline text-blue-500" /> {"who loves building fun and innovative projects."} 
-          {"Whether it's developing AI-powered chatbots or researching network correlation, I thrive on solving complex problems with creative solutions! 💡🚀"}
+          Hi, I'm <span className="text-purple-700 font-bold">Umaiza!</span> ✨ A passionate <FaMagic className="inline text-pink-500" /> ML and Generative AI enthusiast <FaRobot className="inline text-blue-500" /> who loves building fun and innovative projects. 
+          Whether it's developing AI-powered chatbots or researching network correlation, I thrive on solving complex problems with creative solutions! 💡🚀
         </p>
       </motion.div>
     </motion.section>
@@ -162,8 +162,8 @@ useEffect(() => {
 
       <motion.section id="projects"  className="p-10 text-center rounded-xl shadow-lg border-4 border-purple-200 m-6"
       style={{ backgroundImage: "url('https://i.pinimg.com/736x/89/42/08/89420819fb9c0959d1354329aa158739.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <h2 className="text-3xl font-bold text-purple-800">{"💡Projects"} </h2>
-        <p className="text-2xl text-purple-900">   {"Find them on my Github below😉"}</p>
+        <h2 className="text-3xl font-bold text-purple-800">💡Projects </h2>
+        <p className="text-2xl text-purple-900">   Find them on my Github below 😉</p>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {[{ name: "ASL Interpreter", description: `
 Built a Python and OpenCV-powered interpreter for American Sign 
@@ -181,7 +181,7 @@ web development. ` },
 
       <motion.section  className="p-10 text-center rounded-xl shadow-lg border-4 border-purple-400 m-6"
       style={{ backgroundImage: "url('https://i.pinimg.com/736x/e8/17/81/e81781623c2c1c632db6a57a5e9e28e5.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <h2 className="text-3xl font-bold text-purple-900 list-disc pl-7">{"🏆 Achievements"} </h2>
+        <h2 className="text-3xl font-bold text-purple-900 list-disc pl-7">🏆 Achievements </h2>
         <ul className="text-purple-700 list-disc pl-5">
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {[{name: "Winner: TechKnow 2023 Challenge"},
@@ -236,7 +236,7 @@ web development. ` },
   className="p-10 text-center relative bg-white/20 rounded-xl shadow-lg border-4 border-purple-400 m-6"
   style={{ backgroundImage: "url('https://i.pinimg.com/originals/0f/c7/67/0fc767553359ab90835e5023261f5f09.gif')", backgroundSize: 'cover', backgroundPosition: 'center' }}
 >
-  <h2 className="text-3xl font-bold text-purple-900">{"🖼️ My Gallery 🖼️"}</h2>
+  <h2 className="text-3xl font-bold text-purple-900">🖼️ My Gallery 🖼️</h2>
   <div className="flex justify-center mt-6">
     <Carousel showThumbs={false} autoPlay infiniteLoop>
       {["https://i.pinimg.com/736x/de/49/8e/de498e196ab6ed151386cfe75dcfe4a2.jpg",
@@ -264,10 +264,10 @@ web development. ` },
 
 
       <motion.section id="contact" className="p-10 text-center">
-        <h2 className="text-3xl font-bold text-purple-900">{"📞 Contact"} </h2>
-        <p className="text-purple-700">{"📧 syedaumaizaunsa@gmail.com"}</p>
-        <p className="text-purple-700">🔗 <a href="https://github.com/Star-1603" className="text-purple-800">{"GitHub"}</a> | <a href="https://in.linkedin.com/in/syeda-u maiza-unsa-29a648287" className="text-purple-800">{"LinkedIn"}</a></p>
-        <p className="text-purple-700"> {"© Syeda Umaiza Unsa. All rights reserved. Still under development (I am not well versed in Full-Stack yet(┬┬﹏┬┬))"}</p>
+        <h2 className="text-3xl font-bold text-purple-900">📞 Contact </h2>
+        <p className="text-purple-700">📧 syedaumaizaunsa@gmail.com</p>
+        <p className="text-purple-700">🔗 <a href="https://github.com/Star-1603" className="text-purple-800">GitHub</a> | <a href="https://in.linkedin.com/in/syeda-u maiza-unsa-29a648287" className="text-purple-800">LinkedIn</a></p>
+        <p className="text-purple-700"> © Syeda Umaiza Unsa. All rights reserved. Still under development (I am not well versed in Full-Stack yet(┬┬﹏┬┬))</p>
       </motion.section>
     </motion.main>
   );
