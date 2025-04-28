@@ -2,7 +2,7 @@
 
 This is my personal portfolio website built using [Vite](https://vitejs.dev/), a fast and modern frontend build tool. It showcases my skills, projects, and contact information in a responsive and visually appealing format.
 
-![screenshot]![image](https://github.com/user-attachments/assets/d7d77dcf-5181-444b-9a62-172e36ae047c)
+![image](https://github.com/user-attachments/assets/d7d77dcf-5181-444b-9a62-172e36ae047c)
 <!-- Optional preview image -->
 
 ## 🚀 Tech Stack
@@ -25,9 +25,7 @@ About me & contact form
 Easy to customize and extend
 
 ## 🧠 Inspiration & Credits
-Inspired by modern portfolio designs and built to reflect my personality and work. Icons and assets used from Pinterest.
-
-(Add more if applicable)
+Inspired by modern portfolio designs, Coquette Aesthetics and built to reflect my personality and work. Icons and assets used from Pinterest.
 
 ## 📬 Contact
 Feel free to reach out via:
