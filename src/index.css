@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255, 249, 240;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(var(--background));
+  color: #4b5563;
+}
+
+@layer components {
+  .container-wrapper {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-medium text-primary-600 mb-6 font-handwritten;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-700 mb-12 max-w-2xl;
+  }
+  
+  .nav-link {
+    @apply relative px-3 py-2 text-gray-700 hover:text-primary-500 transition duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .btn {
+    @apply px-5 py-2.5 rounded-full font-medium transition duration-300 transform hover:translate-y-[-2px];
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 shadow-md;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-300 hover:shadow-softer hover:-translate-y-1;
+  }
+  
+  .sticker {
+    @apply absolute transform rotate-12 animate-float;
+  }
+
+  .sticker-delay {
+    @apply absolute transform -rotate-6 animate-float-delay;
+  }
+}
