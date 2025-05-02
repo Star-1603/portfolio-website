@@ -32,14 +32,13 @@ const Projects: React.FC = () => {
       description: "Uplift is an AI-powered mental healthcare chatbot designed to support emotional well-being. It uses sentiment analysis and intelligent conversation to detect early signs of distress, provide coping strategies, mindfulness exercises, and recommend personal care resources (Self care for the self care queens 💅) when needed. Built with empathy at its core, Uplift helps users navigate their mental health journey one conversation at a time.",
       image: "https://i.pinimg.com/736x/c5/8e/64/c58e64b18f7eb2b012a8fabc29304180.jpg",
       tags: ["React", "Mistral (LLM)", "Python"],
+    },
+    {
+      title: "Nova AI",
+      description: "An AI that keeps it real no cap. Designed to help today's generation decode complex jargon and detailed research papers with Gen Z lingo.",
+      image: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      tags: ["Ollama", "Python", "React"],
     }//,
-    //{
-      //title: "Recommendation System for Movies",
-      //description: "A collaborative filtering algorithm that recommends movies based on user preferences and viewing history.",
-      //image: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      //tags: ["Recommender Systems", "Python", "Collaborative Filtering"],
-
-    //},
     //{
       //title: "Predictive Analytics Dashboard",
       //description: "A dashboard that visualizes data and provides predictive insights using machine learning algorithms.",
