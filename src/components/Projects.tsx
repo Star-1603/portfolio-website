@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
     {
       title: "Nova AI",
       description: "An AI that keeps it real no cap. Designed to help today's generation decode complex jargon and detailed research papers with Gen Z lingo.",
-      image: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "https://i.pinimg.com/736x/a5/ca/31/a5ca317448f4ce02b58d12293023d865.jpg",
       tags: ["Ollama", "Python", "React"],
     }//,
     //{
