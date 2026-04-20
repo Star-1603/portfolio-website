@@ -8,55 +8,91 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
-      <div className="container-wrapper">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+    <section
+      id="home"
+      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#0a0a0c]"
+    >
+      {/* ambient gradients / haze */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(120,119,198,0.18),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_60%,rgba(80,120,255,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 backdrop-blur-[2px]" />
+
+      <div className="container-wrapper relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-7 z-10"
+            transition={{ duration: 0.8 }}
+            className="md:col-span-7"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 text-gray-800">
-              <span className="block text-primary-500 font-handwritten">Hello, I'm Umaiza!</span>
-              <span className="block mt-2">ML Enthusiast & Student</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight">
+              <span className="block text-gray-400 text-lg md:text-5xl mb-3 tracking-wide">
+                syeda umaiza unsa
+              </span>
+
+              <span className="block">
+                systems. signals.
+              </span>
+
+              <span className="block text-gray-400">
+                intelligence in between.
+              </span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl">
-              Exploring the intersections of machine learning, creativity, and problem-solving.
-              Building projects that matter and learning with every step.
+
+            <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed">
+              I build machine learning systems that operate under noise, scale, and uncertainty —
+              from privacy-preserving pipelines to RAG-based network intelligence and
+              time-series anomaly prediction.
             </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <button 
+
+            <p className="mt-4 text-gray-500 text-sm max-w-xl">
+              CUDA • MPI • Distributed Systems • LLMs • Vector Search • Kafka
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <button
                 onClick={scrollToProjects}
-                className="btn btn-primary flex items-center gap-2"
+                className="group flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300"
               >
-                See my work <ArrowRight size={18} />
+                <span className="tracking-wide text-sm">
+                  explore work
+                </span>
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
               </button>
             </div>
           </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+
+          {/* RIGHT SIDE IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="md:col-span-5 relative"
           >
-            <div className="relative w-full h-80 md:h-96 rounded-3xl overflow-hidden">
-              <img 
-                src="https://i.pinimg.com/736x/61/3d/40/613d405eabe5470c2ff36afee4aca564.jpg" 
-                alt="Machine Learning Visualization" 
-                className="w-full h-full object-cover rounded-3xl"
+            <div className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden">
+
+              <img
+                src="https://i.pinimg.com/1200x/55/d2/e0/55d2e02af1623622462dd0abb5a36f37.jpg"
+                alt="abstract system visualization"
+                className="w-full h-full object-cover opacity-80 contrast-110 brightness-75"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-500/20 to-transparent rounded-3xl"></div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-secondary-200 rounded-full opacity-50"></div>
-              <div className="absolute -left-6 -top-6 w-24 h-24 bg-accent-200 rounded-full opacity-50"></div>
-              <div className="absolute right-8 top-8 w-16 h-16 bg-primary-200 rounded-full opacity-50"></div>
+
+              {/* dark overlay */}
+              <div className="absolute inset-0 bg-black/40" />
+
+              {/* glow haze */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(120,119,198,0.2),transparent_70%)] mix-blend-screen" />
+
+              {/* subtle border glow */}
+              <div className="absolute inset-0 rounded-2xl border border-white/10" />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

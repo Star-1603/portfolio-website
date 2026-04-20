@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github } from 'lucide-react';
 import ProjectCard from './ProjectCard';
+import { g } from 'framer-motion/client';
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
@@ -15,87 +16,119 @@ const Projects: React.FC = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.25,
       },
     },
   };
 
   const projects = [
     {
-      title: "FCAPS and Network Elements Correlation using LLMs",
-      description: "A project that utilises LLMs for analysing Network Logs, prompts and suggesting the possible changes needed to optimise performance stats.",
-      image: "https://i.pinimg.com/736x/f9/05/74/f905746c73fa5ec95b959b76e882e75a.jpg",
-      tags: ["NLP", "Python", "Software Management and Analytics", "Sentiment Analysis"],
-    },
-    {
-      title: "Uplift",
-      description: "Uplift is an AI-powered mental healthcare chatbot designed to support emotional well-being. It uses sentiment analysis and intelligent conversation to detect early signs of distress, provide coping strategies, mindfulness exercises, and recommend personal care resources (Self care for the self care queens 💅) when needed. Built with empathy at its core, Uplift helps users navigate their mental health journey one conversation at a time.",
-      image: "https://i.pinimg.com/736x/c5/8e/64/c58e64b18f7eb2b012a8fabc29304180.jpg",
-      tags: ["React", "Mistral (LLM)", "Python"],
-    },
-    {
-      title: "Nova AI",
-      description: "An AI that keeps it real no cap. Designed to help today's generation decode complex jargon and detailed research papers with Gen Z lingo.",
-      image: "https://i.pinimg.com/736x/a5/ca/31/a5ca317448f4ce02b58d12293023d865.jpg",
-      tags: ["Ollama", "Python", "React"],
-    }//,
-    //{
-      //title: "Predictive Analytics Dashboard",
-      //description: "A dashboard that visualizes data and provides predictive insights using machine learning algorithms.",
-      //image: "https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      //tags: ["Data Visualization", "Predictive Analytics", "React", "D3.js"],
-    //}
+  title: "INFER — RAG-based Network Intelligence System",
+  description:
+    "Distributed systems speak in fragments. INFER reconstructs intent — fusing FCAPS signals, vector search, and LLM reasoning into a single diagnostic flow. Built to handle scale, noise, and uncertainty without breaking coherence.",
+  image: "https://i.pinimg.com/1200x/9e/6b/ce/9e6bce7108baad3c6c259e45de2306a3.jpg",
+  tags: ["RAG", "Distributed Systems", "Milvus", "Redis", "LLMs"],
+},
+{
+  title: "HeliXMatch — Parallel DNA Alignment",
+  description:
+    "Sequences stretch across memory and time. HeliXMatch rethinks alignment using dynamic MPI scheduling — balancing load, minimizing memory strain, and scaling across distributed nodes.",
+  image: "https://i.pinimg.com/736x/3b/24/bf/3b24bfdcc396fa8caf1ec0fb4e150e88.jpg",
+  tags: ["MPI", "HPC", "C++", "Parallel Computing"],
+  githubLink: "https://github.com/Star-1603/DNA_Sequencing",
+},
+{
+  title: "Privacy-Preserving Medical Redaction Pipeline",
+  description:
+    "Sensitive data leaves traces everywhere — text, layout, pixels. This system erases identity at multiple layers using ML, OCR control, and contextual reasoning. Built to protect what shouldn't be seen.",
+  image: "https://i.pinimg.com/736x/83/00/93/8300936693223073ae89872baa3eab22.jpg",
+  tags: ["ML", "OCR", "Privacy", "LLMs", "SVM"],
+},
+{
+  title: "Resume Reviewer — Semantic ATS Engine",
+  description:
+    "Beyond keywords. This system reads between lines — matching resumes to roles using embeddings and LLM reasoning, surfacing gaps, alignment, and hidden signals in candidate profiles.",
+  image: "https://i.pinimg.com/736x/8b/9f/26/8b9f2622d78bbb0821f215bce3cd6301.jpg",
+  tags: ["Embeddings", "GenAI", "NLP", "ATS"],
+  githubLink: "https://github.com/Star-1603/Resume_Reviewer",
+},
+{
+  title: "Kafka-based Transaction Processing Service",
+  description:
+    "Streams of transactions, constantly in motion. Built a microservice that listens, validates, and persists financial events — ensuring consistency under continuous flow.",
+  image: "https://i.pinimg.com/736x/4d/7a/93/4d7a930a54b8f101c187e1bc729203b0.jpg",
+  tags: ["Kafka", "Spring Boot", "Microservices", "SQL"],
+  githubLink: "https://github.com/Star-1603/kafka-transaction-service",
+},
+{
+  title: "F1 Streaming Telemetry Dashboard",
+  description:
+    "Real-time insights into Formula 1 performance metrics. This dashboard visualizes telemetry data from race cars, providing drivers and teams with actionable intelligence during races.",
+  image: "https://i.pinimg.com/1200x/c9/24/84/c92484324734dfef6ed5d7f72a4fd703.jpg",
+  tags: ["HTML", "Python", "WebSocket", "Real-time Data"],
+}
   ];
 
   return (
-    <section id="projects" className="section-padding bg-gradient-to-b from-cream to-white relative">
-      <div className="container-wrapper">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: -10 }}
+    <section
+      id="projects"
+      className="relative overflow-hidden py-24 bg-[#0d0d0f]"
+    >
+      {/* Grain / haze overlays */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.15),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(80,120,255,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 backdrop-blur-[2px]" />
+
+      <div className="container-wrapper relative z-10">
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="section-title"
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl font-semibold tracking-tight text-white"
           >
-            My Projects
+            Selected Work
           </motion.h2>
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="section-subtitle mx-auto"
+            animate={inView ? { opacity: 0.6 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-4 max-w-2xl mx-auto text-gray-400 text-sm md:text-base"
           >
-            Exploring machine learning through practical applications and creative solutions
+            systems, signals, and the spaces between them
           </motion.p>
         </div>
 
-        <motion.div 
+        <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
         >
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="mt-20 text-center"
         >
-          <a 
-            href="https://github.com/Star-1603" 
-            target="_blank" 
+          <a
+            href="https://github.com/Star-1603"
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors"
+            className="group inline-flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-300"
           >
-            <Github size={20} />
-            <span className="font-medium">See more on GitHub</span>
-            <ExternalLink size={16} />
+            <Github size={20} className="opacity-70 group-hover:opacity-100" />
+            <span className="tracking-wide text-sm">
+              more fragments on github
+            </span>
+            <ExternalLink size={16} className="opacity-60 group-hover:opacity-100" />
           </a>
         </motion.div>
       </div>

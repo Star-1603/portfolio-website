@@ -14,114 +14,139 @@ const About: React.FC = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.25,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
 
   return (
-    <section id="about" className="section-padding bg-white relative">
-      <div className="container-wrapper">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: -10 }}
+    <section id="about" className="relative py-24 bg-[#0b0b0d] overflow-hidden">
+      
+      {/* ambient haze */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(80,120,255,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 backdrop-blur-[2px]" />
+
+      <div className="container-wrapper relative z-10">
+        
+        <div className="text-center mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="section-title"
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl text-white font-semibold tracking-tight"
           >
-            About Me
+            About
           </motion.h2>
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="section-subtitle mx-auto"
+            animate={inView ? { opacity: 0.6 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-4 text-gray-400 max-w-xl mx-auto text-sm md:text-base"
           >
-            A glimpse into who I am, what I love, and where I'm headed
+            somewhere between research, systems, and curiosity
           </motion.p>
         </div>
 
-        <motion.div 
+        <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         >
+
+          {/* IMAGE */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="relative rounded-3xl overflow-hidden">
-              <img 
-                src="https://i.pinimg.com/736x/4f/df/2f/4fdf2f0661fc338f59ff649ba582d79c.jpg" 
-                alt="Portrait" 
-                className="w-full h-96 object-cover rounded-3xl"
+            <div className="relative rounded-2xl overflow-hidden">
+              <img
+                src="https://i.pinimg.com/1200x/87/4e/5b/874e5b8399b8d0248cb596138bca4ef4.jpg"
+                alt="portrait"
+                className="w-full h-96 object-cover opacity-80 brightness-75 contrast-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-500/20 to-transparent rounded-3xl"></div>
+
+              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(120,119,198,0.2),transparent_70%)] mix-blend-screen" />
+              <div className="absolute inset-0 border border-white/10 rounded-2xl" />
             </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -right-4 -bottom-4 w-28 h-28 bg-secondary-100 rounded-full opacity-70 z-[-1]"></div>
-            <div className="absolute -left-4 -top-4 w-20 h-20 bg-accent-100 rounded-full opacity-70 z-[-1]"></div>
           </motion.div>
 
+          {/* TEXT */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl md:text-3xl font-medium text-gray-800 mb-6">
-              Machine Learning Student & Enthusiast
+            <h3 className="text-2xl md:text-3xl text-white font-medium mb-6">
+              I build systems that learn, adapt, and scale
             </h3>
-            
-            <p className="text-gray-600 mb-6">
-              I'm a passionate student deeply interested in the world of machine learning and artificial intelligence. 
-              My journey began with a curiosity as to how simple technologies like Alexa and Siri functioned, which led me down the rabbit hole of AI, and this has now evolved into a dedicated pursuit of knowledge in this exciting field.
+
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              I'm a Computer Science student at SRM, working across machine learning,
+              distributed systems, and high-performance computing. My work focuses on
+              building intelligent systems that operate under real-world constraints —
+              noisy data, scale, latency, and uncertainty.
             </p>
-            
-            <p className="text-gray-600 mb-8">
-              When I'm not coding or studying ML algorithms, You can find me reading a good fantasy novel or watching my favourite shows.
+
+            <p className="text-gray-500 mb-8 leading-relaxed text-sm">
+              Recently, I’ve been exploring RAG-based architectures, privacy-preserving ML,
+              and time-series anomaly detection — designing systems that don’t just respond,
+              but anticipate.
+              Also a forever Shinji Ikari apologist.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-6">
+
               <div className="flex items-start space-x-3">
-                <div className="p-2 bg-primary-100 rounded-lg text-primary-600">
+                <div className="p-2 rounded-lg bg-white/5 text-gray-300">
                   <GraduationCap size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-800">Education</h4>
-                  <p className="text-gray-600">Computer Science Student, SRM Institute of Science and Technology, KTR.</p>
+                  <h4 className="text-white text-sm">Education</h4>
+                  <p className="text-gray-500 text-xs">
+                    B.Tech CSE — SRM IST (9.85 CGPA)
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
-                <div className="p-2 bg-secondary-100 rounded-lg text-secondary-600">
+                <div className="p-2 rounded-lg bg-white/5 text-gray-300">
                   <Lightbulb size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-800">Learning</h4>
-                  <p className="text-gray-600">Deep Learning & NLP, Web and App development.</p>
+                  <h4 className="text-white text-sm">Focus</h4>
+                  <p className="text-gray-500 text-xs">
+                    ML Systems, RAG, Distributed Infra
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
-                <div className="p-2 bg-accent-100 rounded-lg text-accent-600">
+                <div className="p-2 rounded-lg bg-white/5 text-gray-300">
                   <Heart size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-800">Passion</h4>
-                  <p className="text-gray-600">Solving Real Problems, Period Dramas and Manhwa xD</p>
+                  <h4 className="text-white text-sm">Interests</h4>
+                  <p className="text-gray-500 text-xs">
+                    storytelling, manhwa, anime(NGE Supremacist), quiet late-night builds
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
-                <div className="p-2 bg-primary-100 rounded-lg text-primary-600">
+                <div className="p-2 rounded-lg bg-white/5 text-gray-300">
                   <Coffee size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-800">Hobbies</h4>
-                  <p className="text-gray-600">Reading & Digital Art (You can find them on my instagram!)</p>
+                  <h4 className="text-white text-sm">Off-screen</h4>
+                  <p className="text-gray-500 text-xs">
+                    reading, digital art, music loops on repeat
+                  </p>
                 </div>
               </div>
+
             </div>
           </motion.div>
         </motion.div>
